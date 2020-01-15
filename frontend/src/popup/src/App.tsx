@@ -1,25 +1,66 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { styled, ThemeProvider } from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
+import theme from './theme.js';
+
+const AppContainer = styled(Box)({
+  height: '30em',
+  width: '60em',
+  textAlign: 'center',
+  display: 'flex',
+  flexDirection: 'column',
+});
+
+const ToolBar = styled(Toolbar)({
+  justifyContent: 'center',
+});
+
+const AppGridContainer = styled(Grid)({
+  flexGrow: 1,
+  padding: '2em 4em',
+});
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <ThemeProvider theme={theme}>
+      <AppContainer>
+        <AppBar position="static">
+          <ToolBar>
+            <Typography variant="h4">Findit</Typography>
+          </ToolBar>
+        </AppBar>
+
+        <AppGridContainer
+          justify="center"
+          alignItems="center"
+          container
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Grid item xs={12}>
+            <TextField
+              id="question-text-field"
+              label="Question"
+              placeholder="Ask a question"
+              variant="outlined"
+              autoFocus
+              fullWidth
+            />
+          </Grid>
+          
+          <Grid item xs={2}>
+            <Button variant="contained" color="primary">
+              Search
+            </Button>
+          </Grid>
+        </AppGridContainer>
+      </AppContainer>
+    </ThemeProvider>
   );
 }
 
