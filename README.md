@@ -3,6 +3,8 @@
 Chrome extension to answer any question about the content of the current page you are visiting
 (usually an article, a Wikipedia page, a Reddit thread, a documentation page, etc).
 
+This is :construction: Work In Progress
+
 ## Install
 
 - In *backend/*, run `dev/bin/install`
