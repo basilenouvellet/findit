@@ -8,6 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+import { sendMessageToContentScript } from './utils/chrome';
+
 import theme from './theme.js';
 
 const AppContainer = styled(Box)({
@@ -26,6 +28,19 @@ const AppGridContainer = styled(Grid)({
   flexGrow: 1,
   padding: '2em 4em',
 });
+
+const onSearchClick = () => {
+  sendMessageToContentScript(
+    { getParas: true },
+    response => {
+      console.log('[app.js] response', response);
+
+      const { paras } = response;
+      const text = paras.join(' ');
+      console.log('[app.js] text', text);
+    },
+  );
+};
 
 const App: React.FC = () => {
   return (
@@ -54,7 +69,11 @@ const App: React.FC = () => {
           </Grid>
           
           <Grid item xs={2}>
-            <Button variant="contained" color="primary">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={onSearchClick}
+            >
               Search
             </Button>
           </Grid>

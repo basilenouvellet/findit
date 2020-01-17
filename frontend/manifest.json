@@ -2,12 +2,11 @@
   "manifest_version": 2,
   "name": "Findit",
   "version": "0.1.0",
-  "permissions": ["tabs", "activeTab", "storage"],
+  "permissions": ["activeTab"],
   "content_scripts": [
     {
-      "js": ["contentscript.js"],
-      "css": ["contentscript.css"],
-      "matches": ["<all_urls>"]
+      "matches": ["<all_urls>"],
+      "js": ["contentscript.js"]
     }
   ],
   "background": {
@@ -18,6 +17,20 @@
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "browser_action": {
     "default_popup": "popup/index.html",
-    "default_title": "React Chrome Extension Starter"
+    "default_title": "Findit Extension",
+    "default_icon": {
+      "16": "popup/favicon.ico",
+      "32": "popup/favicon.ico",
+      "48": "popup/favicon.ico",
+      "192": "popup/logo192.png",
+      "512": "popup/logo512.png"
+    }
+  },
+  "icons": {
+    "16": "popup/favicon.ico",
+    "32": "popup/favicon.ico",
+    "48": "popup/favicon.ico",
+    "192": "popup/logo192.png",
+    "512": "popup/logo512.png"
   }
 }
