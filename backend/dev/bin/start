@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -Cue -o pipefail
+
+BACKEND_DIR="$(cd "$(dirname "$0")/../.." ; pwd)" # Absolute path to module
+
+(
+    cd $BACKEND_DIR
+    env FLASK_APP="api.py" FLASK_ENV="development" flask run
+)
