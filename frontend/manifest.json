@@ -13,24 +13,23 @@
     "scripts": ["background.js"],
     "persistent": false
   },
-  "web_accessible_resources": ["assets/*"],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "browser_action": {
     "default_popup": "popup/index.html",
-    "default_title": "Findit Extension",
+    "default_title": "Findit",
     "default_icon": {
-      "16": "popup/favicon.ico",
-      "32": "popup/favicon.ico",
-      "48": "popup/favicon.ico",
-      "192": "popup/logo192.png",
-      "512": "popup/logo512.png"
+      "16": "popup/logo_16x16.png",
+      "32": "popup/logo_32x32.png",
+      "48": "popup/logo_48x48.png",
+      "192": "popup/logo_192x192.png",
+      "512": "popup/logo_512x512.png"
     }
   },
   "icons": {
-    "16": "popup/favicon.ico",
-    "32": "popup/favicon.ico",
-    "48": "popup/favicon.ico",
-    "192": "popup/logo192.png",
-    "512": "popup/logo512.png"
+    "16": "popup/logo_16x16.png",
+    "32": "popup/logo_32x32.png",
+    "48": "popup/logo_48x48.png",
+    "192": "popup/logo_192x192.png",
+    "512": "popup/logo_512x512.png"
   }
 }
