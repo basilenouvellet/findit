@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf dist && rsync -a manifest.json dist/ && rsync -a src/assets/* dist/assets/",
+    "clean": "rm -rf dist && rsync -a manifest.json dist/",
     "prebuild": "npm run clean",
     "build:contentscript-background": "NODE_ENV=production webpack --config webpack.config.js",
     "build:popup": "INLINE_RUNTIME_CHUNK=false npm run build --prefix src/popup && rsync -a src/popup/build/* dist/popup/",
